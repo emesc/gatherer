@@ -25,7 +25,7 @@ RSpec.describe Project do
   describe "estimates" do
     # given data: test needs a project, at least one complete and one incomplete tasks
     let(:project) { Project.new }
-    let(:done) { Task.new(size: 2, completed: true) }
+    let(:done) { Task.new(size: 2, completed_at: 2.days.ago) }
     let(:small_not_done) { Task.new(size: 1) }
     let(:large_not_done) { Task.new(size: 4) }
 
