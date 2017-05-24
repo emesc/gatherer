@@ -1,6 +1,6 @@
 require "rails_helper"
 
-describe "adding projects", :pending do
+describe "adding projects" do
   it "allows a user to create a project with tasks" do
     visit new_project_path
     fill_in "Name", with: "Project Runway"
