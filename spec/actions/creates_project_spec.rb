@@ -8,3 +8,10 @@ describe CreatesProject do
   end
 end
 
+describe "task string parsing" do
+  it "handles an empty string" do
+    creator = CreatesProject.new(name: "Test", task_string: "")
+    tasks = creator.convert_string_to_tasks
+    expect(tasks.size).to eq 0
+  end
+end
