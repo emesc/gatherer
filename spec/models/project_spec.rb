@@ -71,6 +71,9 @@ RSpec.describe Project do
       expect(project).not_to be_on_schedule
     end
 
-
+    it "can calculate total size" do
+      expect(project).to be_of_size(10)
+      expect(project).not_to be_of_size(5).for_incomplete_tasks_only
+    end
   end
 end
