@@ -28,4 +28,7 @@ RSpec.describe Task do
       expect(task.points_toward_velocity).to eq 3
     end
   end
+
+  include_examples "sizeable"
+  it_should_behave_like "sizeable"
 end
