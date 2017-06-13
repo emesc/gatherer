@@ -18,4 +18,12 @@ class Task < ActiveRecord::Base
   def points_toward_velocity
     part_of_velocity? ? size : 0
   end
+
+  def epic?
+    size >= 5
+  end
+
+  def small?
+    size <= 1
+  end
 end
