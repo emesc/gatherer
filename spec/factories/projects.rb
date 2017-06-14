@@ -1,5 +1,6 @@
 FactoryGirl.define do
-  factory :big_project, class: Project do
-    name "Big Project"
+  factory :project do
+    name "Project Runway"
+    due_date { Date.today - rand(50) }
   end
 end
