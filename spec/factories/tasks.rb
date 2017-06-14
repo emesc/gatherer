@@ -3,6 +3,6 @@ FactoryGirl.define do
     title: "To Something"
     size: 3
     project
-    association :doer, factory: :user, name: "Task Doer"
+    association :doer, factory: :user, strategy: :build, name: "Task Doer"
   end
 end
