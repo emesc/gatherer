@@ -1,8 +1,5 @@
 FactoryGirl.define do
   factory :task do
-    title: "To Something"
-    size: 3
-    project
-    association :doer, factory: :user, strategy: :build, name: "Task Doer"
+    sequence(:title) { |n| "Task #{n}" }
   end
 end
