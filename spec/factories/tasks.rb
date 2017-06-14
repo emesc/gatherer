@@ -1,10 +1,10 @@
 FactoryGirl.define do
   factory :task do
-    sequence(:title) { |n| "Task #{n}" }
-
     sequence :email do |n|
       "user_#{n}@test.com"
     end
+    title "Finish Chapter"
+    user_email { generate(:email) }
   end
 
   factory :user do
