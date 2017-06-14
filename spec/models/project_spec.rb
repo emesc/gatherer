@@ -76,4 +76,20 @@ RSpec.describe Project do
       expect(project).not_to be_of_size(5).for_incomplete_tasks_only
     end
   end
+
+  it "uses factory girl slug block" do
+    project = FactoryGirl.create(:project, name: "Book To Write")
+    expect(project.slug).to eq("book_to_write")
+  end
+
+  it "uses factory girl build_stubbed method" do
+    project = FactoryGirl.build_stubbed(:project, name: "New Project")
+    expect(project.name).to eq ("New Project")
+  end
+
+  it "yields the new object to a block for custom processing" do
+    project = FactoryGirl.build_stubbed(:project) do |p|
+      p.tasks << FactoryGirl.build_stubbed(:task)
+    end
+  end
 end
