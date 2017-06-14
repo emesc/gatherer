@@ -1,14 +1,13 @@
 FactoryGirl.define do
   factory :task do
-    sequence :email do |n|
-      "user_#{n}@test.com"
-    end
-    title "Finish Chapter"
-    user_email { generate(:email) }
+    sequence(:title) { |n| "Task #{n}" }
   end
 
-  factory :user do
-    name "Fred Flinstone"
-    email
+  factory :big_task, parent: :task do
+    size 5
+  end
+
+  factory :small_task, parent: :task do
+    size 1
   end
 end
